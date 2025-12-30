@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart PDF Contract Analyzer | Professional Document Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <h1>Smart PDF Contract Analyzer</h1>
+            </div>
+            <p class="subtitle">AI-powered document analysis and insights</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section card">
+                <div class="section-header">
+                    <h2>
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Upload Document
+                    </h2>
+                    <p class="section-description">Upload your PDF contract for intelligent analysis</p>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="pdfFile" accept="application/pdf" class="file-input">
+                    <label for="pdfFile" class="upload-label">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        <span class="upload-text">Click to select PDF or drag and drop</span>
+                        <span class="upload-hint">Maximum file size: 10MB</span>
+                    </label>
+                    <div class="file-info" id="fileInfo"></div>
+                </div>
+
+                <button class="btn btn-primary" id="indexBtn" onclick="indexPDF()">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Index Document
+                </button>
+
+                <div class="status-message" id="indexStatus"></div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Query Section -->
+            <section class="query-section card">
+                <div class="section-header">
+                    <h2>
+                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Analyze Document
+                    </h2>
+                    <p class="section-description">Ask questions about your contract</p>
+                </div>
+
+                <div class="query-input-wrapper">
+                    <textarea 
+                        id="question" 
+                        class="query-input" 
+                        placeholder="Example: What are the termination clauses in this contract?"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <button class="btn btn-secondary" id="analyzeBtn" onclick="askQuestion()">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 0 1 7.38 16.75l2.37 2.37a1 1 0 0 1-1.41 1.41l-2.37-2.37A10 10 0 1 1 12 2z"></path>
+                        <path d="M12 8v4"></path>
+                        <path d="M12 16h.01"></path>
+                    </svg>
+                    Analyze Contract
+                </button>
+
+                <div class="answer-container" id="answerContainer" style="display: none;">
+                    <div class="answer-header">
+                        <svg class="answer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <h3>Analysis Result</h3>
+                    </div>
+                    <div class="answer-content" id="answerBox"></div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Smart PDF Analyzer. Powered by AI Technology.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

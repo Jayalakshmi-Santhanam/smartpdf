@@ -1,0 +1,6 @@
+gradio
+pdfplumber
+chromadb
+sentence-transformers
+requests
+uuid
