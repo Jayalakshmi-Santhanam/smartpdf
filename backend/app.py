@@ -50,6 +50,10 @@ async def index_document(pdf: UploadFile = File(...)):
         "message": result
     }
 
+@app.get("/kaithheathcheck")
+def healthcheck():
+    return {"status": "ok"}
+
 # =========================
 # CHAT API
 # =========================
