@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://127.0.0.1:8000"
+const BACKEND_URL = "https://smartpdf-1uwd.onrender.com"
 
 // File input handling
 const pdfFileInput = document.getElementById("pdfFile")
@@ -140,7 +140,7 @@ function askQuestion() {
       return response.json()
     })
     .then((data) => {
-      answerBox.textContent = data.answer || "No answer received from the server."
+       answerBox.innerHTML = marked.parse(data.answer || "No answer received from the server.")
     })
     .catch((err) => {
       console.error("Analysis error:", err)
